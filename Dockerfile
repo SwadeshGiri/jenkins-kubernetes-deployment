@@ -1,15 +1,21 @@
+# Use official Node image
 FROM node:19-alpine3.16
 
+# Set working directory
 WORKDIR /react-app
 
-COPY package.json .
+# Copy dependencies
+COPY package*.json ./
 
-COPY package-lock.json .
+# Install dependencies
+RUN npm install
 
-RUN npm i
-
+# Copy the app source
 COPY . .
 
+# Expose port 3000
 EXPOSE 3000
 
+# Start the app
 CMD ["npm", "start"]
+

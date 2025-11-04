@@ -1,7 +1,7 @@
 apiVersion: apps/v1
 kind: Deployment
 metadata:
-  name: deployment
+  name: react-app-deployment
   labels:
     app: react-app
 spec:
